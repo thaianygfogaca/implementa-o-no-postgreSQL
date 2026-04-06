@@ -1,0 +1,10 @@
+CREATE TABLE disciplina (
+    codigo SERIAL PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    ementa TEXT NOT NULL,
+    carga_horaria INT NOT NULL,
+    matricula_professor INT NOT NULL,
+
+    CONSTRAINT fk_disciplina_professor
+        FOREIGN KEY (matricula_professor) REFERENCES professor(matricula)
+);
