@@ -1,0 +1,9 @@
+CREATE TABLE turma (
+    codigo SERIAL PRIMARY KEY,
+    sala VARCHAR(20),
+    turno VARCHAR(10),
+    cnpj_escola VARCHAR(20) NOT NULL,
+
+    CONSTRAINT fk_turma_escola
+    FOREIGN KEY (cnpj_escola) REFERENCES escola(cnpj)
+);
