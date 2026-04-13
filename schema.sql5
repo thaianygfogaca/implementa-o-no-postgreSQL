@@ -1,0 +1,11 @@
+CREATE TABLE turma_disciplina (
+    codigo SERIAL PRIMARY KEY,
+    codigo_turma INT NOT NULL,
+    codigo_disciplina INT NOT NULL,
+    dt_inicio DATE,
+    dt_termino DATE,
+    CONSTRAINT fk_cd_turma
+        FOREIGN KEY (codigo_turma) REFERENCES turma(codigo),
+    CONSTRAINT fk_cd_disciplina
+        FOREIGN KEY (codigo_disciplina) REFERENCES disciplina(codigo)
+);
